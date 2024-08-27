@@ -35,6 +35,7 @@ public class HotelReservationManager {
                         deleteReservation(connection, scanner);
                         break;
                     case 0:
+                        exit();
                         return;
                     default:
                         System.out.println("Enter valid choice.");
@@ -165,5 +166,20 @@ public class HotelReservationManager {
             System.out.println(e.getMessage());
             return true;
         }
+    }
+
+    private static void exit(){
+        System.out.print("Exiting");
+        int i = 3;
+        while(i != 0){
+            try {
+                Thread.sleep(900);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.print(".");
+            i--;
+        }
+        System.out.println("\nThanks for using!");
     }
 }
